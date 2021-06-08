@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Theme/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Scripts/Menu Settings.gd" type="Script" id=2]
+
+[node name="MenuSettings" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.0152344
+anchor_top = 0.0180556
+anchor_right = 0.984766
+anchor_bottom = 0.981944
+margin_top = -9.53674e-07
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Settings" type="Label" parent="."]
+margin_left = 287.0
+margin_top = 67.0
+margin_right = 936.0
+margin_bottom = 508.0
+theme = ExtResource( 1 )
+text = "Настройки"
+align = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Settings"]
+margin_left = 56.0
+margin_top = 92.0
+margin_right = 570.0
+margin_bottom = 164.0
+
+[node name="Label" type="Label" parent="Settings"]
+margin_left = 112.0
+margin_top = 58.0
+margin_right = 516.0
+margin_bottom = 91.0
+text = "Чуствительность мыши : "
+align = 1
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 52.0
+margin_top = 25.0
+margin_right = 298.0
+margin_bottom = 269.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

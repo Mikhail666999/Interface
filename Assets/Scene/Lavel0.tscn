@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/Lavel0.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Camera"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.15278, 2.06831 ), Vector3( 0, 1.15278, 2.06831 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -24.05, 53.087, 0 ), Vector3( 3.97522, 132.954, -155.777 ) ]
+}
+
+[node name="Lavel0" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.600602, -0.325843, 0.73014, 0, 0.91319, 0.407534, -0.799548, -0.244765, 0.548464, 0, 1.15278, 2.06831 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Camera"
+anims/Camera = SubResource( 3 )

@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Theme/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Scripts/Menu.gd" type="Script" id=2]
+
+[node name="Menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.2625
+anchor_top = 0.175
+anchor_right = 0.710938
+anchor_bottom = 0.761111
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+pause_mode = 2
+anchor_left = 0.289844
+anchor_top = 0.188889
+anchor_right = 0.678906
+anchor_bottom = 0.7375
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+margin_top = 113.0
+margin_right = 498.0
+margin_bottom = 152.0
+theme = ExtResource( 1 )
+text = "Продолжить"
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+margin_top = 156.0
+margin_right = 498.0
+margin_bottom = 195.0
+theme = ExtResource( 1 )
+text = "Заново"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+margin_top = 199.0
+margin_right = 498.0
+margin_bottom = 238.0
+theme = ExtResource( 1 )
+text = "Настройки"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 242.0
+margin_right = 498.0
+margin_bottom = 281.0
+theme = ExtResource( 1 )
+text = "Выход"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
