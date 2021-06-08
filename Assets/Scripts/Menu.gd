@@ -20,7 +20,7 @@ func _on_Restart_pressed():
 
 func _on_Settings_pressed():
 	queue_free()
-	G.StartSettingsIsIMainMenu == 2
+	G.StartSettingsIsIMainMenu = 2
 	G.LoadIsLavel("Menu Settings")
 	pass # Replace with function body.
 
